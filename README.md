@@ -1,8 +1,12 @@
-<img src="https://avatars2.githubusercontent.com/u/2810941?v=3&s=96" alt="Google Cloud Platform logo" title="Google Cloud Platform" align="right" height="96" width="96"/>
+# Release Please
 
-# [Release Please](https://github.com/googleapis/release-please)
+> [!NOTE]
+> This is a modified fork of [googleapis/release-please](https://github.com/googleapis/release-please),
+> published to npm as `@release-please-oss/release-please`. It is not affiliated with or endorsed by Google.
+> Original work Copyright Google LLC, licensed under the [Apache License 2.0](LICENSE).
+> See the git history for changes made in this fork.
 
-[![npm version](https://img.shields.io/npm/v/release-please.svg)](https://www.npmjs.org/package/release-please)
+[![npm version](https://img.shields.io/npm/v/@release-please-oss/release-please.svg)](https://www.npmjs.org/package/@release-please-oss/release-please)
 [![codecov](https://codecov.io/gh/googleapis/release-please/graph/badge.svg)](https://codecov.io/gh/googleapis/release-please)
 
 Release Please automates CHANGELOG generation, the creation of GitHub releases,

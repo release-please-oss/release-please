@@ -1,5 +1,5 @@
 {
-  "name": "release-please",
+  "name": "@release-please-oss/release-please",
   "version": "17.11.2",
   "description": "generate release PRs based on the conventionalcommits.org spec",
   "main": "./build/src/index.js",
@@ -21,17 +21,20 @@
     "!build/src/**/*.map",
     "schemas"
   ],
-  "repository": "googleapis/release-please",
+  "repository": "release-please-oss/release-please",
   "keywords": [
     "release",
     "conventional-commits"
   ],
   "author": "Google Inc.",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/googleapis/release-please/issues"
+  "publishConfig": {
+    "access": "public"
   },
-  "homepage": "https://github.com/googleapis/release-please#readme",
+  "bugs": {
+    "url": "https://github.com/release-please-oss/release-please/issues"
+  },
+  "homepage": "https://github.com/release-please-oss/release-please#readme",
   "config": {
     "snap-shot-it": {
       "sortSnapshots": true
