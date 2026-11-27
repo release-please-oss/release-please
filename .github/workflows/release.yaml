@@ -1,0 +1,33 @@
+on:
+  push:
+    branches:
+      - main
+name: release
+permissions: {}
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+    steps:
+      - id: release
+        uses: release-please-oss/release-please-action@599c30aae1e6568bb6a4303384e77b8c4f4d7376 # v6.0.4
+  publish:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # npm trusted publishing (OIDC), no NPM_TOKEN secret
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
+        with:
+          node-version: 24 # trusted publishing needs npm >= 11.5.1
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm publish
